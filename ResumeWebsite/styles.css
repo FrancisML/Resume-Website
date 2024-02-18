@@ -707,7 +707,7 @@ nav li {
   flex-direction: column;
   width: 20vw;
   background-color: #0070cd;
-  background-image: url("/Imgs/WebsiteProject.png");
+  background-image: url("Imgs/WebsiteProject.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -716,13 +716,13 @@ nav li {
   position: relative;
 }
 .PI3 {
-  background-image: url("/Imgs/Screenshot\ 2024-02-16\ at\ 7.55.27\ PM.png");
+  background-image: url("Imgs/Screenshot\ 2024-02-16\ at\ 7.55.27\ PM.png");
 }
 .PI4 {
-  background-image: url("/Imgs/Vending\ machine.png");
+  background-image: url("Imgs/Vending\ machine.png");
 }
 .PI2 {
-  background-image: url("/Imgs/socal\ logo\ copy.png");
+  background-image: url("Imgs/socal\ logo\ copy.png");
 }
 .projectItem h3 {
   height: 100%;
@@ -964,7 +964,7 @@ footer {
 
   #about {
     justify-content: center;
-    background-image: url(/Imgs/Rainbow\ vista\ ledg2.jpg);
+    background-image: url(Imgs/Rainbow\ vista\ ledg2.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
