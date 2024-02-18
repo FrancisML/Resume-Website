@@ -104,7 +104,7 @@ header {
   position: fixed;
   width: 100%;
   top: 0;
-  z-index: 5;
+  z-index: 8;
   margin-left: -5vw;
 }
 #mobleHeaderImg {
@@ -311,12 +311,12 @@ nav li {
   background-color: rgba(46, 46, 46, 0.9);
   height: 100%;
   max-width: 100%;
-  z-index: 0;
+  z-index: 7;
 }
 #messageWrapper {
-  visibility: hidden;
+  visibility: visible;
   display: flex;
-  position: absolute;
+  position: fixed;
   justify-content: center;
   top: 0;
   left: 0;
@@ -1123,14 +1123,15 @@ footer {
   }
   .jobExpanded {
     display: none;
-    position: absolute;
-    top: 20vw;
+    position: fixed;
+    top: 25vw;
     width: 100%;
     height: auto;
     background-image: url(Imgs/Griffith2.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 62% 50%;
+    z-index: 5;
   }
   #workSection {
     position: relative;
@@ -1162,13 +1163,15 @@ footer {
     color: #d25a3f;
 
     font-size: 15vw;
+    height: 0;
     top: -6.5vw;
     left: 42%;
-    height: 10vw;
-    width: 10vw;
-    border-radius: 0;
-    background-color: #1e1e1e;
+    background-color: none;
     z-index: 2;
+  }
+  .fa-circle-xmark {
+    background-color: #1e1e1e;
+    border-radius: 50%;
   }
   .ewtextTitle h3 {
     font-size: 6vw;
