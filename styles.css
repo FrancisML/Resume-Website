@@ -1133,6 +1133,18 @@ footer {
     background-position: 62% 50%;
     z-index: 5;
   }
+  .JEV {
+    background-image: url(Imgs/vangaurd\ work.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 62% 50%;
+  }
+  .JEC {
+    background-image: url(Imgs/Craftsmanwork.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 62% 50%;
+  }
   #workSection {
     position: relative;
     margin-top: 10vw;
@@ -1154,7 +1166,7 @@ footer {
   }
   .expandedWorkLogo {
     height: auto;
-    max-width: 90%;
+    max-width: 60%;
     justify-self: center;
     align-self: center;
   }
