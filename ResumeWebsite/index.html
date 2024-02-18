@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <script src="java.js"></script>
+
+    <title>Your Name - Resume</title>
+  </head>
+
+  <body>
+    <!-------------------------------------------Main Sections Navigation-------------------------------------------------------------------->
+    <nav id="navBar" class="navBar">
+      <ul id="mainNav">
+        <li>
+          <a class="navLink" href="#aboutAnchor"
+            ><span class="grey">&lt</span>About<span class="grey">&gt</span></a
+          >
+        </li>
+        <li>
+          <a class="navLink" href="#skillsAnchor"
+            ><span class="grey">&lt</span> Skills
+            <span class="grey">&gt</span></a
+          >
+        </li>
+        <li>
+          <a class="navLink" href="#strengthsAnchor"
+            ><span class="grey">&lt</span> Strengths
+            <span class="grey">&gt</span></a
+          >
+        </li>
+        <li>
+          <a class="navLink" href="#employmentAnchor"
+            ><span class="grey">&lt</span> Employment
+            <span class="grey">&gt</span></a
+          >
+        </li>
+        <li>
+          <a class="navLink" href="#educationAnchor"
+            ><span class="grey">&lt</span> Education
+            <span class="grey">&gt</span></a
+          >
+        </li>
+        <li>
+          <a class="navLink" href="#portfolioAnchor"
+            ><span class="grey">&lt</span> Portfolio
+            <span class="grey">&gt</span></a
+          >
+        </li>
+        <a id="mobleMenuBTN"><div class="fa-solid fa-bars"></div></a>
+      </ul>
+
+      <!-------------------------------------------Social media icons-------------------------------------------------------------------->
+      <div class="socialBar">
+        <a id="nameNav" href="#header"
+          ><h3>
+            <span class="pare">{</span>Frank LaSalvia<span class="pare">}</span>
+          </h3></a
+        >
+        <div class="social-icons">
+          <a
+            href="https://www.facebook.com/frank.lasalvia.3"
+            target="_blank"
+            class="fa-brands fa-facebook-f"
+          ></a>
+          <a
+            href="https://www.instagram.com/francis_marino42/"
+            target="_blank"
+            class="fa-brands fa-instagram"
+          ></a>
+          <a
+            href="www.linkedin.com/in/francislasalvia"
+            target="_blank"
+            class="fa-brands fa-linkedin"
+          ></a>
+          <a
+            href="https://github.com/FrancisML"
+            target="_blank"
+            class="fa-brands fa-github"
+          ></a>
+        </div>
+      </div>
+    </nav>
+    <div id="mobileNav">
+      <a href="#about" class="mobileNavLink"
+        ><span class="grey">&lt</span>About<span class="grey">&gt</span></a
+      >
+      <a href="#skillsAnchor" class="mobileNavLink"
+        ><span class="grey">&lt</span> Skills <span class="grey">&gt</span></a
+      >
+      <a href="#strengthsAnchor" class="mobileNavLink"
+        ><span class="grey">&lt</span> Strengths
+        <span class="grey">&gt</span></a
+      >
+      <a href="#employmentAnchor" class="mobileNavLink"
+        ><span class="grey">&lt</span> Employment
+        <span class="grey">&gt</span></a
+      >
+      <a href="#educationAnchor" class="mobileNavLink"
+        ><span class="grey">&lt</span> Education
+        <span class="grey">&gt</span></a
+      >
+      <a href="#portfolioAnchor" class="mobileNavLink"
+        ><span class="grey">&lt</span> Portfolio
+        <span class="grey">&gt</span></a
+      >
+    </div>
+    <!-------------------------------------------Header------------------------------------------------------------------->
+    <header id="header" class="background-image">
+      
+      <div class="header-content">
+        <div id="titlesOne">
+          <h2 class="headName">Frank</h2>
+          <h2 class="headName">LaSalvia</h2>
+          <button id="contactButton" onclick="showElement();">
+            Contact Me
+          </button>
+        </div>
+        <img src="/Imgs/mobleHeaderImg.png" alt="" id="mobleHeaderImg">
+        <div id="titlesTwo">
+          <h2 class="headTitle">Software</h2>
+          <h2 class="headTitle">Developer</h2>
+          
+        </div>
+        <button  id="contactButtonMoble" onclick="showElement();">
+            Contact Me
+          </button>
+      </div>
+    <div id="messageWrapper">
+      <div id="messageEmail">
+        <p>Thanks For Reaching Out!</p>
+        <button onclick="hideMessage()">Close</button>
+      </div>
+      
+    </header>
+    <div id="formWrapper" style="visibility: hidden; ">
+      <form id="form" onsubmit="sendEmail(); reset(); hideElement(); showMessage(); return false;">
+        <h3>
+          <span class="grey">&lt</span> Get In Touch
+          <span class="grey">&gt</span>
+        </h3>
+        <a onclick="hideElement()" id="formExit"
+          ><i class="fa-solid fa-xmark"></i
+        ></a>
+        <input type="text" id="name" placeholder="Your Name" required />
+        <input type="text" id="company" placeholder="Company" />
+        <input type="email" id="email" placeholder="Email" required />
+        <input type="text" id="phone" placeholder="Phone" required />
+        <textarea id="message" placeholder="Message" rows="5"></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </div>
+    
+    </div>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <div class="anchor" id="aboutAnchor"></div>
+
+    <!-------------------------------------------About Section--------------------------------------------------------------->
+    <section id="about">
+      
+      <div id="aboutPWrapper">
+        <h2 class="blue headingText">
+        <span class="grey">&lt</span> About <span class="grey">&gt</span>
+      </h2>
+      <p class="aboutMeP">
+        Welcome to my corner of the web! I'm Frank, a passionate software
+        developer proudly based in Cleveland, Ohio. While I'm a native of
+        Cleveland, my professional journey has taken me across the country, from
+        New Jersey to California, where I've called home for the past six years.
+        Despite my love for California, my beautiful wife Jourdyn and I decided
+        to return to "The Land" to be closer to our families. <p class="aboutMeP">My career hasn't
+        always been rooted in the tech world. I spent a significant part of my
+        professional life working hands-on in the trades, contributing to
+        remarkable projects and gaining invaluable insights into the
+        construction and maintenance of our infrastructure.</p> <p class="aboutMeP">Why the shift to a
+        tech career, you might wonder? Well, my fascination with technology has
+        been a longstanding passion. I dabbled in website creation and, as I
+        delved deeper into coding in my spare time, my curiosity grew. When the
+        opportunity arose to pursue tech full-time, I seized it without
+        hesitation. </p><p class="aboutMeP">This website is a testament to my journey. Rather than a
+        traditional resume, I've crafted it from scratch to showcase not just my
+        skills but also who I am and what I love. Thanks for stopping by!</p>
+      </p>
+      </div>
+      
+        <img id="aboutImg" src="/Imgs/Rainbow vista ledg2.jpg" alt="picture of me and my wife">
+      
+    </section>
+     <!-------------------------------------------Skills Section--------------------------------------------------------------->
+<div class="anchor" id="skillsAnchor"></div>
+    <section id="skills">
+      <h2 class="blue headingText">
+        <span class="grey">&lt</span> My Skills <span class="grey">&gt</span>
+      </h2>
+      <div id="skillsContent">
+      
+      <div id="skillsWrapper">
+        <div id="softSkillsCont" class="skillsBox">
+          <h3 class="h3comment"><span>&#47;</span><span>&#47;</span>  Software Development</h3>
+          <table class="numbered-list">
+            <tr>
+              <td class="tdBorder"><span class="list-number">1</span></td>
+              <td class="tableSpace"></td>
+              <td class="skillsListItem">Java</td>
+            </tr>
+            <tr>
+              <td class="tdBorder"><span class="list-number">2</span></td>
+              <td class="tableSpace"></td>
+              <td class="skillsListItem">SQL</td>
+            </tr>
+            <tr>
+              <td class="tdBorder"><span class="list-number">3</span></td>
+              <td class="tableSpace"></td>
+              <td class="skillsListItem">Javascript</td>
+            </tr>
+            <tr>
+              <td class="tdBorder"><span class="list-number">4</span></td>
+              <td class="tableSpace"></td>
+              <td class="skillsListItem">HTML</td>
+            </tr>
+            <tr>
+              <td class="tdBorder"><span class="list-number">5</span></td>
+              <td class="tableSpace"></td>
+              <td class="skillsListItem">CSS</td>
+            </tr>
+            <tr>
+              <td class="tdBorder"><span class="list-number">6</span></td>
+              <td class="tableSpace"></td>
+              <td class="skillsListItem">Unit Testing</td>
+            </tr>
+            <tr>
+              <td class="tdBorder"><span class="list-number">7</span></td>
+              <td class="tableSpace"></td>
+              <td class="skillsListItem">C#</td>
+            </tr>
+              <tr>
+              <td class="tdBorder"><span class="list-number">8</span></td>
+              <td class="tableSpace"></td>
+              <td class="skillsListItem">Microsoft Office</td>
+            </tr>
+            <tr>
+              <td class="tdBorder"><span class="list-number">9</span></td>
+              <td class="tableSpace"></td>
+              <td class="skillsListItem">Vue.Js</td>
+            </tr>
+          </table>
+        </div>
+
+        <div id="conSkillsCont" class="skillsBox">
+          <h3 class="h3comment" ><span>&#47;</span><span>&#47;</span>  Construction</h3>
+          
+           <table class="numbered-list">
+            <tr>
+              <td class="tdBorder"><span class="list-number">1</span></td>
+              <td class="tableSpace"></td>
+              <td class="skillsListItem">Osha 30</td>
+            </tr>
+            <tr>
+              <td class="tdBorder"><span class="list-number">2</span></td>
+              <td class="tableSpace"></td>
+              <td class="skillsListItem">Hazwopper</td>
+            </tr>
+            <tr>
+              <td class="tdBorder"><span class="list-number">3</span></td>
+              <td class="tableSpace"></td>
+              <td class="skillsListItem">Asbestos Certified</td>
+            </tr>
+            <tr>
+              <td class="tdBorder"><span class="list-number">4</span></td>
+              <td class="tableSpace"></td>
+              <td class="skillsListItem">Forklift Certified</td>
+            </tr>
+            <tr>
+              <td class="tdBorder"><span class="list-number">5</span></td>
+              <td class="tableSpace"></td>
+              <td class="skillsListItem">Confined Space</td>
+            </tr>
+            <tr>
+              <td class="tdBorder"><span class="list-number">6</span></td>
+              <td class="tableSpace"></td>
+              <td class="skillsListItem">Concrete Placement</td>
+            </tr>
+            <tr>
+              <td class="tdBorder"><span class="list-number">7</span></td>
+              <td class="tableSpace"></td>
+              <td class="skillsListItem">Grade Checking</td>
+            </tr>
+            <tr>
+              <td class="tdBorder"><span class="list-number">8</span></td>
+              <td class="tableSpace"></td>
+              <td class="skillsListItem">Onsite Trucking Logistics</td>
+            </tr>
+            <tr>
+              <td class="tdBorder"><span class="list-number">9</span></td>
+              <td class="tableSpace"></td>
+              <td class="skillsListItem">Equipment Operator</td>
+            </tr>
+            <tr>
+              <td class="tdBorder"><span class="list-number">10</span></td>
+              <td class="tableSpace"></td>
+              <td class="skillsListItem">Rigging</td>
+            </tr>
+            <tr>
+              <td class="tdBorder"><span class="list-number">11</span></td>
+              <td class="tableSpace"></td>
+              <td class="skillsListItem">Concrete Cutting</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    </section>
+    <!-------------------------------------------Strengths Section---------------------------------------------------------->
+    <div class="anchor" id="strengthsAnchor"></div>
+
+    <section id="strengths">
+      <h2 class="headingText"><span class="grey">&lt</span> My Strengths <span class="grey">&gt</span></h2>
+      <div id="strengthsWrapper">
+      
+      
+      <div id="testWrapper">
+        <div id="testHeadings">
+          <div class="restorativeStength" id="testHeadingsLink">Restorative</div>
+          <div class="contextStength" id="testHeadingsLink">Context</div>
+          <div class="harmonyStength" id="testHeadingsLink">Harmony</div>
+          <div  class="contextStength"id="testHeadingsLink">Ideation</div>
+          <div  class="IntellectionStength"id="testHeadingsLink">Intellection</div>
+          
+
+        </div>
+        <div class="testTextBox" id="restorativeDisplay">
+          <div  id="testDefinition" class="strengthsContent">
+            <h3>Definition</h3>
+          <p>
+            Restorative individuals excel in problem-solving, finding
+            satisfaction in identifying and fixing issues, whether practical or
+            complex, recognizing their intervention as a vital saving force.
+          </p>
+          </div>
+          <div id="testRelevance"class="strengthsContent">
+            <h3>Personal</h3>
+            <p>
+I am the kind of individual who, when confronted with something broken, is relentless in my efforts to repair it. There's an unparalleled sense of satisfaction that comes from acquiring a new skill through the process of troubleshooting and fixing various items, whether it's my car, refrigerator, or code that isn't behaving as expected.
+            </p>
+          </div>
+        </div>
+        <div class="testTextBox" id="contextDisplay">
+          <div  id="testDefinition"class="strengthsContent">
+            <h3>Definition</h3>
+          <p>
+            People strong in the Context Strength find stability and confidence
+            by reflecting on the past. This ability allows them to understand
+            initial intentions, recognize blueprints, and make better decisions,
+            making them insightful partners and wise about the future.
+          </p>
+          </div>
+          <div id="testRelevance"class="strengthsContent">
+            <h3>Personal</h3>
+            <p>As a human being, I readily admit to making mistakes. However, each time I do, I remind myself not to repeat them. I believe in extracting valuable lessons from these missteps, turning them into learning experiences. Life, in its entirety, serves as an extraordinary teacher. Those who neglect to acknowledge their past are destined to relive it.
+            </p>
+          </div>
+        </div>
+        <div class="testTextBox" id="harmonyDisplay">
+          <div  id="testDefinition"class="strengthsContent">
+            <h3>Definition</h3>
+          <p>
+            Harmony-themed individuals, prioritize consensus over conflict,
+            actively seeking common ground and modifying their objectives for
+            harmony. They believe in focusing on practical, agreeable matters to
+            avoid unnecessary discord and unproductive debates.
+          </p>
+          </div>
+          <div id="testRelevance"class="strengthsContent">
+            <h3>Personal</h3>
+            <p>Throughout my career, I've encountered colleagues with whom I've found it challenging to foster strong relationships. However, I've consistently viewed my coworkers as teammates united by a common objective. In moments of tension on the job site, I strive to embody the voice of reason, setting aside personal ego and approaching situations with a logical mindset.
+            </p>
+          </div>
+        </div>
+        <div class="testTextBox" id="ideationDisplay">
+          <div  id="testDefinition"class="strengthsContent">
+            <h3>Definition</h3>
+          <p>
+            Those with strong Ideation find joy in discovering connections
+            between diverse phenomena and relish new, thrilling ideas that offer
+            unique perspectives on familiar challenges.
+          </p>
+          </div>
+          <div id="testRelevance"class="strengthsContent">
+            <h3>Personal</h3>
+            <p>In the dynamic environment of various construction sites, a plethora of unique challenges inevitably arise. It often becomes essential to explore unconventional avenues and think outside the box to uncover solutions that transcend standard operating procedures.
+            </p>
+          </div>
+        </div>
+        <div class="testTextBox" id="intellectionDisplay">
+          <div  id="testDefinition"class="strengthsContent">
+            <h3>Definition</h3>
+          <p>
+            Intellection-themed individuals have a preference for intellectual
+            activity and introspection, finding satisfaction in thinking and
+            stretching their mental muscles. Whether focused or unfocused, their
+            introspective nature leads to constant contemplation of thoughts and
+            ideas.
+          </p>
+          </div>
+          <div id="testRelevance"class="strengthsContent">
+            <h3>Personal</h3>
+            <p>
+I excel at absorbing new information and delving deeply into its implications, constantly evaluating my stance on various matters. Maintaining an open mind and attentive ears, I remain receptive to diverse perspectives and insights.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div id="MobleStrengthsWrapper">
+        <div id="MobleStrengthsHeadings">
+          <div id="restorativeStengthLink" class="mobleStrengthsLink">1</div>
+          <div id="contextStengthLink" class="mobleStrengthsLink">2</div>
+          <div id="harmonyStengthLink" class="mobleStrengthsLink">3</div>
+          <div  id="contextStengthLink" class="mobleStrengthsLink">4</div>
+          <div  id="IntellectionStengthLink" class="mobleStrengthsLink">5</div>
+          
+
+        </div>
+        <div style="display: none;" class="mobileTextBox" id="restorativeMobileDisplay">
+          <div  id="MobleDefinition" class="strengthsMoblieContent">
+            <h3>Restorative</h3>
+          <p>
+            Restorative individuals excel in problem-solving, finding
+            satisfaction in identifying and fixing issues, whether practical or
+            complex, recognizing their intervention as a vital saving force.
+          </p>
+          </div>
+          <div id="mobileRelevance"class="strengthsMobileContent">
+            <h3>Personal</h3>
+            <p>
+I am the kind of individual who, when confronted with something broken, is relentless in my efforts to repair it. There's an unparalleled sense of satisfaction that comes from acquiring a new skill through the process of troubleshooting and fixing various items, whether it's my car, refrigerator, or code that isn't behaving as expected.
+            </p>
+          </div>
+        </div>
+        <div style="display: none;"class="mobileTextBox" id="contextMobileDisplay">
+          <div  id="MobleDefinition" class="strengthsMoblieContent">
+            <h3>Context</h3>
+          <p>
+            People strong in the Context Strength find stability and confidence
+            by reflecting on the past. This ability allows them to understand
+            initial intentions, recognize blueprints, and make better decisions,
+            making them insightful partners and wise about the future.
+          </p>
+          </div>
+          <div id="mobileRelevance"class="strengthsMobileContent">
+            <h3>Personal</h3>
+            <p>
+As a human being, I readily admit to making mistakes. However, each time I do, I remind myself not to repeat them. I believe in extracting valuable lessons from these missteps, turning them into learning experiences. Life, in its entirety, serves as an extraordinary teacher. Those who neglect to acknowledge their past are destined to relive it.
+            </p>
+          </div>
+        </div>
+        <div style="display: none;"class="mobileTextBox" id="ideationMobileDisplay">
+          <div  id="MobleDefinition" class="strengthsMoblieContent">
+            <h3>Harmony</h3>
+          <p>
+            Harmony-themed individuals, prioritize consensus over conflict,
+            actively seeking common ground and modifying their objectives for
+            harmony. They believe in focusing on practical, agreeable matters to
+            avoid unnecessary discord and unproductive debates.
+          </p>
+          </div>
+          <div id="mobileRelevance"class="strengthsMobileContent">
+            <h3>Personal</h3>
+            <p>
+Throughout my career, I've encountered colleagues with whom I've found it challenging to foster strong relationships. However, I've consistently viewed my coworkers as teammates united by a common objective. In moments of tension on the job site, I strive to embody the voice of reason, setting aside personal ego and approaching situations with a logical mindset.
+            </p>
+          </div>
+        </div>
+        <div class="mobileTextBox" id="ideationMobileDisplay">
+          <div  id="MobleDefinition" class="strengthsMoblieContent">
+            <h3>Ideation</h3>
+          <p>
+            Those with strong Ideation find joy in discovering connections
+            between diverse phenomena and relish new, thrilling ideas that offer
+            unique perspectives on familiar challenges.
+          </p>
+          </div>
+          <div id="mobileRelevance"class="strengthsMobileContent">
+            <h3>Personal</h3>
+            <p>
+In the dynamic environment of various construction sites, a plethora of unique challenges inevitably arise. It often becomes essential to explore unconventional avenues and think outside the box to uncover solutions that transcend standard operating procedures.
+            </p>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+    <!-------------------------------------------Employment Section------------------------------------------------------------>
+    <div class="anchor" id="employmentAnchor"></div>
+
+    <section id="workSection">
+      <h2 class="headingText"><span class="grey">&lt</span>Employment <span class="grey">&gt</span></h2>
+      <h3 id="clicktoexpand"><span>&#47;</span><span>&#47;</span> Click to expand</h3>  
+      <div id="Workwrapper">
+        <ul id="workList">
+          <li class="work" id="griffithListItem">
+            
+            <img
+              class="logoImg"
+              src="/Imgs/Griffith.png"
+              alt="Griffith Company Logo"
+            />
+            <h4 id="workh4" class="redHeading">Sep 2022 - Dec 2023</h4>
+          </li>
+          <li class="work " id="independanceListItem">
+            
+            <img
+              class="logoImg"
+              src="/Imgs/Vangaurd.png"
+              alt="Vangaurd Construction Logo"
+            />
+            <h4 id="workh4"class="redHeading">Mar 2019 - Sep 2022</h4>
+          </li>
+          <li class="work" id="craftsmanListItem">
+            
+            <img
+              class="logoImg"
+              src="/Imgs/Craftsman.png"
+              alt="Craftsman Concrete Cutting Logo"
+            />
+            <h4 id="workh4"class="redHeading">Mar 2019 - Sep 2022</h4>
+          </li>
+          <li class="work" id="independanceListItem">
+           
+            <img
+              class="logoImg"
+              src="/Imgs/Independence.png"
+              alt="Independence Excavating Logo"
+            />
+            <h4 id="workh4"class="redHeading">Mar 2015 - Mar 2017</h4>
+          </li>
+          <li class="work" id="naturesListItem">
+            <img
+              class="logoImg"
+              src="/Imgs/Natures.png"
+              alt="Nature's Landscape & Design Logo"
+            />
+            <h4 id="workh4"class="redHeading">Mar 2011 - Mar 2015</h4>
+          </li>
+          
+          <li class="work" id="jamieItem">
+            
+            <img
+              class="logoImg"
+              src="/Imgs/The difran.png"
+              alt="Nature's Landscape & Design Logo"
+            />
+            <h4 id="workh4"class="redHeading">Mar 2005 - Mar 2011</h4>
+          </li>
+        </ul>
+      </div>
+      <div id="griffithExpanded" class="jobExpanded" >
+        <a onclick="" id="jobExit"
+          ><i class="fa-solid fa-circle-xmark"></i></a>
+        <div class="workContentWrapper">
+          <div class="expandedWorkTitle">
+          <img class="expandedWorkLogo"src="/Imgs/Griffith.png" alt="">
+            <div class="ewtextTitle">
+              <h3>Griffith Company</h3>
+              <h4>Lead Laborer</h4>
+              <h3 id="jobDate">Sep 2021 - Dec 2023</h3>
+            </div>
+          </div>
+          <div class="ewJobDescription">
+            <h3>Job Description</h3>
+            <ul class="jDList">
+              <li>Plan and manage onsite trucking logistics</li>
+              <li>Coordinate daily equipment maintenance</li>
+              <li>Monitor conditions for saftey hazards</li>
+              <li>assisting heavy equipment operators</li>
+            </ul>
+             
+          </div>
+        </div>
+        <img class="jobImg" src="/Imgs/Griffith2.png" alt="">
+      </div>
+      
+      <div id="vanagurdExpanded" class="jobExpanded" >
+        <a onclick="" id="jobExit"
+          ><i class="fa-solid fa-circle-xmark"></i></a>
+        <div class="workContentWrapper">
+          <div class="expandedWorkTitle">
+          <img class="expandedWorkLogo" src="/Imgs/Vangaurd.png" alt="">
+            <div class="ewtextTitle">
+              <h3>Vanguard </h3>
+              
+              <h4>Laborer | Line Setter | Equipment Operator</h4>
+              <h3 id="jobDate">Mar 2019 - Sep 2022</h3>
+            </div>
+          </div>
+          <div class="ewJobDescription">
+            <h3>Job Description</h3>
+            <ul class="jDList">
+              <li>Plan and manage onsite trucking logistics</li>
+              <li>Coordinate daily equipment maintenance</li>
+              <li>Monitor conditions for saftey hazards</li>
+              <li>assisting heavy equipment operators</li>
+            </ul>
+             
+          </div>
+        </div>
+        <img class="jobImg" src="/Imgs/Griffith2.png" alt="">
+      </div>
+      <div id="craftsmanExpanded" class="jobExpanded" >
+        <a onclick="" id="jobExit"
+          ><i class="fa-solid fa-circle-xmark"></i></a>
+        <div class="workContentWrapper">
+          <div class="expandedWorkTitle">
+          <img class="expandedWorkLogo" src="/Imgs/Craftsman.png" alt="">
+            <div class="ewtextTitle">
+              <h3>Craftsman</h3>
+              <h4>Laborer | Concrete Saw Technician</h4>
+              <h3 id="jobDate">Sep 2022 - Dec 2023</h3>
+            </div>
+          </div>
+          <div class="ewJobDescription">
+            <h3>Job Description</h3>
+            <ul class="jDList">
+              <li>Plan and manage onsite trucking logistics</li>
+              <li>Coordinate daily equipment maintenance</li>
+              <li>Monitor conditions for saftey hazards</li>
+              <li>assisting heavy equipment operators</li>
+            </ul>
+             
+          </div>
+        </div>
+        <img class="jobImg" src="/Imgs/Griffith2.png" alt="">
+      </div>
+      <div id="independanceExpanded" class="jobExpanded" >
+        <a onclick="" id="jobExit"
+          ><i class="fa-solid fa-circle-xmark"></i></a>
+        <div class="workContentWrapper">
+          <div class="expandedWorkTitle">
+          <img class="expandedWorkLogo" src="/Imgs/Independence.png" alt="">
+            <div class="ewtextTitle">
+              <h3>Independence</h3>
+              <h4>Laborer</h4>
+              <h3 id="jobDate">Sep 2021 - Dec 2023</h3>
+            </div>
+          </div>
+          <div class="ewJobDescription">
+            <h3>Job Description</h3>
+            <ul class="jDList">
+              <li>Plan and manage onsite trucking logistics</li>
+              <li>Coordinate daily equipment maintenance</li>
+              <li>Monitor conditions for saftey hazards</li>
+              <li>assisting heavy equipment operators</li>
+            </ul>
+             
+          </div>
+        </div>
+        <img class="jobImg" src="/Imgs/Griffith2.png" alt="">
+      </div>
+      <div id="NaturesExpanded" class="jobExpanded" >
+        <a onclick="" id="jobExit"
+          ><i class="fa-solid fa-circle-xmark"></i></a>
+        <div class="workContentWrapper">
+          <div class="expandedWorkTitle">
+          <img class="expandedWorkLogo" src="/Imgs/Natures.png" alt="">
+            <div class="ewtextTitle">
+              <h3>Nature's</h3>
+              <h4>Owner</h4>
+              <h3 id="jobDate">Sep 2021 - Dec 2023</h3>
+            </div>
+          </div>
+          <div class="ewJobDescription">
+            <h3>Job Description</h3>
+            <ul class="jDList">
+              <li>Plan and manage onsite trucking logistics</li>
+              <li>Coordinate daily equipment maintenance</li>
+              <li>Monitor conditions for saftey hazards</li>
+              <li>assisting heavy equipment operators</li>
+            </ul>
+             
+          </div>
+        </div>
+        <img class="jobImg" src="/Imgs/Griffith2.png" alt="">
+      </div>
+      <div id="griffithExpanded" class="jobExpanded" >
+        <a onclick="" id="jobExit"
+          ><i class="fa-solid fa-circle-xmark"></i></a>
+        <div class="workContentWrapper">
+          <div class="expandedWorkTitle">
+          <img id="SCLogo" class="expandedWorkLogo" src="/Imgs/Screenshot 2024-02-03 at 8.29.53 PM.png" alt="">
+            <div class="ewtextTitle">
+              <h3>State Crest</h3>
+              <h4>Warehouse Associate</h4>
+              <h3 id="jobDate">Sep 2021 - Dec 2023</h3>
+            </div>
+          </div>
+          <div class="ewJobDescription">
+            <h3>Job Description</h3>
+            <ul class="jDList">
+              <li>Plan and manage onsite trucking logistics</li>
+              <li>Coordinate daily equipment maintenance</li>
+              <li>Monitor conditions for saftey hazards</li>
+              <li>assisting heavy equipment operators</li>
+            </ul>
+             
+          </div>
+        </div>
+        <img class="jobImg" src="/Imgs/Griffith2.png" alt="">
+      </div>
+      <div id="griffithExpanded" class="jobExpanded" >
+        <a onclick="" id="jobExit"
+          ><i class="fa-solid fa-circle-xmark"></i></a>
+        <div class="workContentWrapper">
+          <div class="expandedWorkTitle">
+          <img id="SCLogo" class="expandedWorkLogo" src="/Imgs/The difran.png" alt="">
+            <div class="ewtextTitle">
+              <h3>Difrancesco</h3>
+              <h4>Warehouse Associate</h4>
+              <h3 id="jobDate">Sep 2021 - Dec 2023</h3>
+            </div>
+          </div>
+          <div class="ewJobDescription">
+            <h3>Job Description</h3>
+            <ul class="jDList">
+              <li>Plan and manage onsite trucking logistics</li>
+              <li>Coordinate daily equipment maintenance</li>
+              <li>Monitor conditions for saftey hazards</li>
+              <li>assisting heavy equipment operators</li>
+            </ul>
+             
+          </div>
+        </div>
+        <img class="jobImg" src="/Imgs/Griffith2.png" alt="">
+      </div>
+      
+    </section>
+    <div class="anchor" id="educationAnchor"></div>
+    <!-------------------------------------------Eductation Section------------------------------------------------------------->
+
+    <section id="education">
+      <h2 class="headingText"><span class="grey">&lt</span> Education <span class="grey">&gt</span></h2>
+      <div id="logoCont" >
+      <img class="edLogo" src="/Imgs/TELOGO.png" alt="">
+      <img class="edLogo" src="/Imgs/udemylogo.png" alt="">
+      <img class="edLogo" src="/Imgs/FCCLOGO.png" alt="">
+
+      </div>
+
+      <h3 class="h3comment"><span>&#47;</span><span>&#47;</span>  Certificates</h3>
+
+      <div id="certsWrapper">
+        <div class="certItem">
+          <img src="/Imgs/UDEMY HTML.png" alt="">
+          <div id="certTextBox">
+            <h3>Modern HTML & CSS From The Beginning (Including Sass)</h3>
+            <h4>March 17, 2021</h4>
+            <img class="certLOGO"  src="/Imgs/udemylogo.png" alt="">
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="anchor" id="portfolioAnchor"></div>
+     <!-------------------------------------------Portfolio Section------------------------------------------------------------->
+     <Section id="Portfolio" >
+       <h2 class="headingText"><span class="grey">&lt</span> Portfolio <span class="grey">&gt</span></h2>
+       <div class="projectsWrapper" >
+      <div class="projectsCont">
+        <div class="projectItem">
+          <h3><span>Resume Website</span></h3>
+        </div>
+      </div>
+      <div class="projectsCont">
+        <div class="projectItem PI2">
+          <h3><span>Socal Rider Website</span></h3>
+        </div>
+      </div>
+      <div class="projectsCont">
+        <div class="projectItem PI3">
+          <h3><span>My Wedding Website</span></h3>
+        </div>
+      </div>
+      <div class="projectsCont">
+        <div class="projectItem PI4">
+          <h3><span>Java Vending Machine</span></h3>
+        </div>
+      </div>
+      </div>
+      </section>
+    
+ 
+
+    <footer>
+      <p>Frank LaSalvia &copy; 2024</p>
+    </footer>
+  </body>
+</html>
