@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   var testHeadingsLinks = document.querySelectorAll("#testHeadingsLink");
   var strengthsDivs = document.querySelectorAll(".testTextBox");
 
-  // Apply default style to set white bottom border for all items except the first one
+  //Apply default style to set white bottom border for all items except the first one
   testHeadingsLinks.forEach(function (link, index) {
     link.addEventListener("click", function () {
       // Change bottom border color for all list items
