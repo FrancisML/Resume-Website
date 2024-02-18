@@ -314,7 +314,7 @@ nav li {
   z-index: 7;
 }
 #messageWrapper {
-  visibility: visible;
+  visibility: hidden;
   display: flex;
   position: fixed;
   justify-content: center;
