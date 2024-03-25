@@ -1179,6 +1179,24 @@ footer {
     background-repeat: no-repeat;
     background-position: 62% 50%;
   }
+  .JEI {
+    background-image: url(Imgs/independence\ work.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 62% 50%;
+  }
+  .JED {
+    background-image: url(Imgs/Difran\ work.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 62% 50%;
+  }
+   .JEN {
+    background-image: url(Imgs/Natures\ copy.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 62% 50%;
+  }
   #workSection {
     position: relative;
     margin-top: 10vw;
