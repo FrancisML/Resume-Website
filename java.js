@@ -25,7 +25,7 @@ function sendEmail() {
   Email.send({
     Host: "smtp.elasticemail.com",
     Username: "francismlasalvia@gmail.com",
-    Password: "4F39E190E321AAAB6E8B3E76F8B21D981FCF",
+    Password: "",
     To: "francismlasalvia@gmail.com",
     From: document.getElementById("email").value,
     Subject: "SOMEONE IS REACHING OUT",
